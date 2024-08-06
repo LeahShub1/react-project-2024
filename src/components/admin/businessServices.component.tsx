@@ -175,38 +175,32 @@ export const BusinessServices = () => {
                 </button>
                 {showForm && (
                     <form onSubmit={handleAddService}>
-                        <label>
-                            Name:
+                          
                             <input
+                            placeholder='name'
                                 type="text"
                                 value={newService.name || ''}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => handleNewServiceChange('name', e.target.value)}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => handleNewServiceChange('name', e.target.value) }
                             />
-                        </label>
-                        <label>
-                            Price:
+                      
                             <input
+                            placeholder='price'
                                 type="number"
                                 value={newService.price || ''}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => handleNewServiceChange('price', parseFloat(e.target.value))}
                             />
-                        </label>
-                        <label>
-                            Duration:
                             <input
+                            placeholder='duration'
                                 type="text"
                                 value={newService.duration || ''}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => handleNewServiceChange('duration', e.target.value)}
                             />
-                        </label>
-                        <label>
-                            Description:
                             <input
+                            placeholder='description'
                                 type="text"
                                 value={newService.description || ''}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => handleNewServiceChange('description', e.target.value)}
                             />
-                        </label>
                         <button type="submit">Add Service</button>
                     </form>
                 )}

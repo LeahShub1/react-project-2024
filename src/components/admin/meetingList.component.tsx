@@ -1,6 +1,6 @@
 import { useState, useEffect, ChangeEvent } from 'react';
 import axios from 'axios';
-import "../../styles/list.css"
+import "../../styles/list.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Meeting } from '../../interface/bussiness.interface';
@@ -14,7 +14,6 @@ export const MeetingList = () => {
     const [editingMeeting, setEditingMeeting] = useState<Partial<Meeting>>({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
     useEffect(() => {
         const fetchMeetings = async () => {
@@ -26,7 +25,6 @@ export const MeetingList = () => {
                 });
                 setMeetings(response.data);
             } catch (error) {
-
                 console.error('Error fetching meetings:', error);
                 setError('Error fetching meetings.');
             } finally {
@@ -81,20 +79,9 @@ export const MeetingList = () => {
         }
     };
 
-    const formatDateTime = (date: string, time: string) => {
-        const [day, month, year] = date.split('/');
-        return new Date(`${year}-${month}-${day}T${time}`);
-    };
-
     const filteredMeetings = meetings.filter(meeting =>
         meeting.customerName.toLowerCase().includes(searchTerm.toLowerCase())
     );
-
-    const sortedMeetings = [...filteredMeetings].sort((a, b) => {
-        const dateTimeA = formatDateTime(a.date, a.time).getTime();
-        const dateTimeB = new Date(b.date, b.time).getTime();
-        return sortOrder === 'asc' ? dateTimeA - dateTimeB : dateTimeB - dateTimeA;
-    });
 
     if (loading) {
         return <div>Loading...</div>;
@@ -115,14 +102,12 @@ export const MeetingList = () => {
             />
 
             <h2 className="section-header">רשימת פגישות</h2>
-            <button onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
-                Sort by Date and Time ({sortOrder === 'asc' ? 'Ascending' : 'Descending'})
-            </button>
-            {sortedMeetings.length === 0 ? (
+
+            {filteredMeetings.length === 0 ? (
                 <p>לא נמצאו פגישות</p>
             ) : (
                 <ul className="list">
-                    {sortedMeetings.map((meeting) => (
+                    {filteredMeetings.map((meeting) => (
                         <li key={meeting.id} className="list-item">
                             <div className="item-details">
                                 <p><strong>type service</strong> {meeting.serviceType}</p>

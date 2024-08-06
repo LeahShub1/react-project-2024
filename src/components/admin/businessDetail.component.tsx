@@ -12,7 +12,7 @@ export const BusinessDetail = () => {
     const [editingDetail, setEditingDetail] = useState<Partial<Detail>>({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    const [name, setName] = useState("potoo");
+    const [name, setName] = useState("phtography");
 
     useEffect(() => {
 
@@ -41,7 +41,7 @@ export const BusinessDetail = () => {
         };
 
         fetchsetDetail();
-    }, [token, name]);
+    }, [token]);
 
     const handleEdit = (key: keyof Detail) => {
         setEditingDetail((prev) => ({
@@ -97,18 +97,10 @@ export const BusinessDetail = () => {
                 <h2 className="section-header">Our Details</h2>
                 <div className="item-details">
                     <p>
-                        <strong>name:</strong>
-                        {editingDetail.name !== undefined ? (
-                            <input
-                                type="text"
-                                value={editingDetail.name}
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange('name', e.target.value)}
-                                onBlur={() => handleBlur('name')}
-                                autoFocus
-                            />
-                        ) : (
-                            <span onClick={() => handleEdit('name')}>{detail?.name}</span>
-                        )}
+                        <p>
+                            <strong>name:</strong>
+                            {detail?.name}
+                        </p>
                     </p>
                     <p>
                         <strong>address:</strong>

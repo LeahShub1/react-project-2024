@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Meeting } from "../interface/bussiness.interface";
-
 export const addMeeting = async (data:Meeting) => {
     const tokenString = localStorage.getItem('jwtToken');
     const token = tokenString !== null ? JSON.parse(tokenString) : null;
