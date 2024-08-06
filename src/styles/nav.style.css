@@ -1,0 +1,45 @@
+/* Reset עבור קפיצות סגנון והגדרות נפוצות */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  
+  /* עיצוב כללי לתפריט הניווט */
+  .navbar {
+    background-color: #ffd9f7; /* רקע רגיל של תפריט */
+    color: #333; /* טקסט שחור */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    flex: 1; /* כדי שהלוגו יתמקם לימין */
+  }
+  
+  .navbar-menu {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  .navbar-menu-item {
+    margin-left: 20px;
+  }
+  
+  .navbar-menu-item a {
+    text-decoration: none;
+    color: #333; /* טקסט שחור */
+    font-weight: bold;
+    padding: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-menu-item a:hover {
+    background-color: #f7ff92; /* רקע כאשר על העכבר */
+    border-radius: 5px;
+    color: #333; /* שינוי צבע לשחור */
+  }
+  

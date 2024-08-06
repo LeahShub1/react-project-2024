@@ -1,0 +1,62 @@
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.section-container {
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.section-header {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.list-container {
+    margin-top: 10px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.item-details {
+    margin-bottom: 10px;
+}
+
+.item-details p {
+    margin: 5px 0;
+}
+
+.item-details strong {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+
+

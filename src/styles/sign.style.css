@@ -1,0 +1,40 @@
+/* styles.css */
+
+.container {
+    background-color: #f7ff92;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px; /* ניתן לשנות את הרוחב לפי הצורך */
+    margin: 0 auto; /* מירוץ במרכז הדף */
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+  }
+  
+  button[type="submit"] {
+    background-color: #ffd9f7;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
