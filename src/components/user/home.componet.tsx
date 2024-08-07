@@ -53,7 +53,6 @@ export const Home = () => {
 
     return (
         <>
-            <Nav />
             <h1>{detail?.name}</h1>
             <h4>{detail?.description}</h4>
             <Gallery  />

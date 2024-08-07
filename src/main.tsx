@@ -17,6 +17,7 @@ import { Users } from './components/admin/users.component.tsx';
 import SignUp from './components/signUp.component.tsx';
 import { AuthProvider } from './context/auth.context.tsx';
 import SignIn from './components/signIn.component.tsx';
+import { Gallery } from './components/user/galery.component.tsx';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,9 @@ const router = createBrowserRouter([
       }, {
         path: '/meeting',
         Component: Meeting
+      }, {
+        path: '//gallery',
+        Component: Gallery
       }
     ]
   }, {
